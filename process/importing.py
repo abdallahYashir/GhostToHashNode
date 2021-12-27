@@ -14,4 +14,7 @@ class Importing:
         self.data = json.load(self.file_content)
 
     def is_file_valid(self):
+        # should contain dd
+        # db[0] should be a list with properties data
+        # data should contain at least one post property
         return None

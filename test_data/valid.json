@@ -1,0 +1,23 @@
+  {
+    "db": [
+      {
+        "meta": {},
+        "data": {
+          "posts": [
+            {
+              "id": "5c32fc7fc8b30b0807136770",
+              "title": "Writing to Share & Teach",
+              "slug": "writing-to-share-teach",
+              "html": "<p>George Orwell's main reason for a writer to write was <em>Sheer egoism - </em>the desire to seem clever, to be talked about and remembered after death.</p><p>My main reasons to write is to: </p><ol><li>share my experience and</li><li>teach what I know.</li></ol><p>I learnt this concept in the international best-selling book <em>Rework</em> - written by David H. Hansson and Jason Fried. Writing gives me a process of clear thinking, understanding myself and an improved way of communicating with others.</p><figure class=\"kg-card kg-image-card\"><img src=\"https://images.unsplash.com/photo-1473186505569-9c61870c11f9?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ\" class=\"kg-image\" alt=\"black and silver fountain pen\"><figcaption>Photo by <a href=\"https://unsplash.com/@alvaroserrano?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit\">Álvaro Serrano</a> / <a href=\"https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit\">Unsplash</a></figcaption></figure><p>I intend using this blog as a central repository - for all my writings that might be published on-line. I plan on posting anything; from my experience in the world of Software Development, reviews on stuff I interact with and reflections on our day to day lives with the lessons I learn.</p><p>For the moment, I am not using a domain name so as to focus on the writing experience.</p><p>I can also use other platforms such as Medium, but with my Blog, hosted independently - I have more control on my content. Moreover, I don't know when the site might be down, and I lose all my content or they can change their policies any time without notice.</p><p>Wordpress is another excellent CMS platform. I find Ghost, however, to be easier to install, especially when using Digital Ocean's One Click Install applications. Either case, on a glance, manually installing Ghost is a straightforward experience.</p><p>I am going to publish here first, then on the Internet - for example, more technical posts on Medium or other publications elsewhere on the Web.</p><hr>",
+              "plaintext": "George Orwell's main reason for a writer to write was Sheer egoism - the desire\nto seem clever, to be talked about and remembered after death.\n\nMy main reasons to write is to: \n\n 1. share my experience and\n 2. teach what I know.\n\nI learnt this concept in the international best-selling book Rework  - written\nby David H. Hansson and Jason Fried. Writing gives me a process of clear\nthinking, understanding myself and an improved way of communicating with others.\n\nPhoto by Álvaro Serrano\n[https://unsplash.com/@alvaroserrano?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit] \n / Unsplash\n[https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit]\nI intend using this blog as a central repository - for all my writings that\nmight be published on-line. I plan on posting anything; from my experience in\nthe world of Software Development, reviews on stuff I interact with and\nreflections on our day to day lives with the lessons I learn.\n\nFor the moment, I am not using a domain name so as to focus on the writing\nexperience.\n\nI can also use other platforms such as Medium, but with my Blog, hosted\nindependently - I have more control on my content. Moreover, I don't know when\nthe site might be down, and I lose all my content or they can change their\npolicies any time without notice.\n\nWordpress is another excellent CMS platform. I find Ghost, however, to be easier\nto install, especially when using Digital Ocean's One Click Install\napplications. Either case, on a glance, manually installing Ghost is a\nstraightforward experience.\n\nI am going to publish here first, then on the Internet - for example, more\ntechnical posts on Medium or other publications elsewhere on the Web.\n\n\n--------------------------------------------------------------------------------",
+              "feature_image": "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
+              "status": "published",
+              "visibility": "public",
+              "published_at": "2019-01-07T07:18:17.000Z",
+              "custom_excerpt": null
+            }
+          ]
+        }
+      }
+    ]
+  }

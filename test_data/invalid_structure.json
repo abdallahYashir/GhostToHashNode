@@ -1,0 +1,20 @@
+[{
+  "unsupported_structure": {
+    "test": true
+  }
+},
+  {
+    "db": [
+      {
+        "meta": {},
+        "data": {
+          "posts": [
+            {
+              "__value__": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
