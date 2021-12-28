@@ -1,7 +1,5 @@
 from pprint import pprint
 
-from process.document import Datum, DB
-
 
 class Post:
     def __init__(self, data):
@@ -19,7 +17,5 @@ class Post:
         pprint(filtered_posts)
         return filtered_posts
 
-    def is_post_valid(self, post):
-        # post property should contain all the properties
-
+    def is_ghost_valid(self, post):
         return False

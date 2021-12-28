@@ -17,4 +17,17 @@ class Importing:
         # should contain dd
         # db[0] should be a list with properties data
         # data should contain at least one post property
-        return None
+        valid = True
+        if len(list(self.data["db"])) == 0:
+            valid = False
+        else:
+            if "data" in list(self.data["db"])[0]:
+                valid = True
+                if "posts" in list(self.data["db"])[0]["data"]:
+                    valid = True
+                else:
+                    valid = False
+            else:
+                valid = False
+
+        return valid
