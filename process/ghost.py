@@ -1,5 +1,5 @@
 class Ghost:
-    def __init__(self, title, slug, html, plaintext, status, visibility, feature_image, published_at, custom_excerpt):
+    def __init__(self, id, title, slug, html, plaintext, status, visibility, feature_image, published_at, custom_excerpt):
         self.id = id
         self.title = title
         self.slug = slug

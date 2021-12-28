@@ -3,7 +3,7 @@ import unittest
 from pprint import pprint
 
 from process.importing import Importing
-from process.post import Post
+from process.transform import Transform
 
 
 class ImportFileTests(unittest.TestCase):
@@ -11,7 +11,7 @@ class ImportFileTests(unittest.TestCase):
         file_content = Importing('../test_data/valid.json')
         file_content.read_file()
 
-        post = Post(file_content.data)
+        post = Transform(file_content.data)
         post.get_list_of_posts()
         self.assertEqual(len(post.posts), 1)
 

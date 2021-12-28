@@ -3,14 +3,13 @@ from collections import namedtuple
 from pprint import pprint
 
 from process.importing import Importing
-from process.post import Post
-
+from process.transform import Transform
 
 def setup():
     file_content = Importing('../test_data/valid.json')
     file_content.read_file()
-    post = Post(file_content.data)
-    return post.get_list_of_posts()
+    transform = Transform(file_content.data)
+    return transform.get_list_of_posts()
 
 
 class MyTestCase(unittest.TestCase):
@@ -28,6 +27,13 @@ class MyTestCase(unittest.TestCase):
         else:
             self.assertTrue(False)
 
+    def test_should_transform_to_ghost_object(self):
+        posts = setup()
+        ghost_posts = Transform.dict_to_object(posts)
+        self.assertEqual(len(ghost_posts), 1)
+        first_ghost_post = ghost_posts[0]
+        self.assertEqual(first_ghost_post.id, "5c32fc7fc8b30b0807136770")
+        self.assertEqual(first_ghost_post.title, "Writing to Share & Teach")
 
 if __name__ == '__main__':
     unittest.main()
