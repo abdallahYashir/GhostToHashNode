@@ -5,6 +5,7 @@ from pprint import pprint
 from process.importing import Importing
 from process.transform import Transform
 
+
 def setup():
     file_content = Importing('../test_data/valid.json')
     file_content.read_file()
@@ -22,7 +23,9 @@ class MyTestCase(unittest.TestCase):
         posts = setup()
         first_post = posts[0]
 
-        if all(key in first_post for key in ("id", "title", "slug", "html", "plaintext", "status", "visibility", "feature_image", "published_at", "custom_excerpt")):
+        if all(key in first_post for key in (
+        "id", "title", "slug", "html", "plaintext", "status", "visibility", "feature_image", "published_at",
+        "custom_excerpt")):
             self.assertTrue(True)
         else:
             self.assertTrue(False)
@@ -34,6 +37,7 @@ class MyTestCase(unittest.TestCase):
         first_ghost_post = ghost_posts[0]
         self.assertEqual(first_ghost_post.id, "5c32fc7fc8b30b0807136770")
         self.assertEqual(first_ghost_post.title, "Writing to Share & Teach")
+
 
 if __name__ == '__main__':
     unittest.main()

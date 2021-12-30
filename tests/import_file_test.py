@@ -18,6 +18,19 @@ class ImportFileTests(unittest.TestCase):
         is_valid = file_content.is_file_valid()
         self.assertTrue(is_valid)
 
+    @unittest.skip("Can't test invalid test format for the moment")
+    def test_json_file_format(self):
+        # file_content = Importing('../test_data/sample.pdf')
+        # file_content.read_file()
+        self.assertRaises(Exception, "Invalid file format", Importing('../test_data/sample.pdf'))
+        # self.assertRaises(Exception, "Invalid file format", file_content.read_file)
+
+    def test_empty_file(self):
+        file_content = Importing('../test_data/empty_file.json')
+        file_content.read_file()
+        self.assertRaises(Exception, "File is empty")
+
+
 
 if __name__ == '__main__':
     unittest.main()
