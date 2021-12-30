@@ -30,6 +30,14 @@ class ImportFileTests(unittest.TestCase):
         file_content.read_file()
         self.assertRaises(Exception, "File is empty")
 
+    def test_html_to_markdown(self):
+        file = open('../test_data/html_markdown_data.json')
+        content = json.load(file)
+        # TODO: replace file reading with os.path.dirname(__file__)
+        simple_post = content["simple_post"]
+        html = simple_post["html"]
+        markdown = simple_post["markdown"]
+        self.assertEqual(Importing.convert_html_to_markdown(html), markdown)
 
 
 if __name__ == '__main__':

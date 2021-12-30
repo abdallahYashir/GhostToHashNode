@@ -1,0 +1,6 @@
+{
+  "simple_post": {
+    "html": "         <h1> <strong>Geeks</strong>\n         for<br>\n         Geeks\n         </h1>",
+    "markdown": "# **Geeks** for  \nGeeks"
+  }
+}

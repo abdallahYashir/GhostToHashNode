@@ -1,5 +1,7 @@
 from pprint import pprint
 
+import markdownify
+
 from process.ghost import Ghost
 
 
@@ -16,7 +18,6 @@ class Transform:
     def filter_posts(self, number, status):
         filtered_posts = [post for post in self.posts if post['status'] == 'published']
         filtered_posts = filtered_posts[-number:]
-        pprint(filtered_posts)
         return filtered_posts
 
     @staticmethod
@@ -24,9 +25,30 @@ class Transform:
         list_ghost_posts = []
         if len(posts) > 0:
             for post in posts:
-                new_ghost_post = Ghost(post['id'], post['title'], post['slug'], post['html'], post['plaintext'], post['status'], post['visibility'], post['feature_image'], post['published_at'], post['custom_excerpt'])
+                new_ghost_post = Ghost(post['id'], post['title'], post['slug'], post['html'], post['plaintext'],
+                                       post['status'], post['visibility'], post['feature_image'], post['published_at'],
+                                       post['custom_excerpt'])
                 list_ghost_posts.append(new_ghost_post)
         return list_ghost_posts
+
+    def generate_front_matter(self, title, date, slug, image):
+        fm = (
+            '---'
+            f'title: {title}'
+            f'date: {date}'
+            f'slug: {slug}'
+            f'image: {image}'
+            '---'
+        )
+        return fm
+
+    def convert_html_to_markdown(self, html):
+        return markdownify.markdownify(html)
+
+    def generate_file(self, title, date, slug, image, html):
+        fm = self.generate_front_matter(title, date, slug, image)
+        content = self.convert_html_to_markdown(html)
+        return fm + "\n\n" + content
 
     def is_ghost_valid(self, post):
         return False
