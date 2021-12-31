@@ -20,3 +20,5 @@ sample_file = transform_file.generate_file(single_post.title, single_post.publis
                                            single_post.html)
 
 pprint(sample_file)
+with open("output.md", "w") as text_file:
+    text_file.write("%s" % sample_file)

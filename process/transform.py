@@ -33,12 +33,12 @@ class Transform:
 
     def generate_front_matter(self, title, date, slug, image):
         fm = (
-            '---'
-            f'title: {title}'
-            f'date: {date}'
-            f'slug: {slug}'
-            f'image: {image}'
-            '---'
+            '---\n'
+            f'title: {title} \n'
+            f'date: {date} \n'
+            f'slug: {slug}\n'
+            f'image: {image}\n'
+            '---\n'
         )
         return fm
 
