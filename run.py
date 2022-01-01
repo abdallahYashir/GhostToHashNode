@@ -1,3 +1,4 @@
+import zipfile
 from pprint import pprint
 
 from process.importing import Importing
@@ -16,9 +17,13 @@ pprint(ghost_posts[0].title)
 single_post = ghost_posts[0]
 
 # Convert one file
-sample_file = transform_file.generate_file(single_post.title, single_post.published_at, single_post.slug, single_post.feature_image,
+sample_file = transform_file.generate_file(single_post.title, single_post.published_at, single_post.slug,
+                                           single_post.feature_image,
                                            single_post.html)
 
-pprint(sample_file)
+pprint(sample_file.strip())
 with open("output.md", "w") as text_file:
     text_file.write("%s" % sample_file)
+    # convert sample file to a zip
+
+zipfile.ZipFile('posts.zip', mode='w').write("output.md")
