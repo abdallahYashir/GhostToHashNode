@@ -16,8 +16,12 @@ class Importing:
     def __init__(self, path):
         self.data = None
         self.file_content = None
-        self.path = path
+        self.path = self.get_file_path(path)
         self.read_file()
+
+    def get_file_path(self, path):
+        root = os.path.dirname(os.path.abspath(__file__))
+        return os.path.join(root, path)
 
     def read_file(self):
         check_valid_file_format(self.path)

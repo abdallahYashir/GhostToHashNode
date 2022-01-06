@@ -4,7 +4,8 @@ from pprint import pprint
 from process.importing import Importing
 from process.transform import Transform
 
-file = Importing("../abdallah-yashir-blog.ghost.2021-12-26.json")
+# TODO: only take the file name -> let Importing class do the rest
+file = Importing("abdallah-yashir-blog.ghost.2021-12-24.json")
 transform_file = Transform(file.data)
 
 transform_file.get_list_of_posts()
