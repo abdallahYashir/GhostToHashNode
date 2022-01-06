@@ -32,6 +32,8 @@ class Transform:
         return list_ghost_posts
 
     def generate_front_matter(self, title, date, slug, image):
+        # A better way is, with named parameters and .format():
+        # https://stackoverflow.com/questions/10660435/pythonic-way-to-create-a-long-multi-line-string
         fm = (
             '---'
             '\n'
