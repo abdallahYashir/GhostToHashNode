@@ -1,3 +1,4 @@
+import codecs
 import zipfile
 from pprint import pprint
 
@@ -23,7 +24,8 @@ sample_file = transform_file.generate_file(single_post.title, single_post.publis
                                            single_post.html)
 
 pprint(sample_file.strip())
-with open("output.md", "w") as text_file:
+with open("output.md", "w", encoding="utf-8") as text_file:
+    # text_file.write(codecs.BOM_UTF8)
     text_file.write("%s" % sample_file)
     # convert sample file to a zip
 

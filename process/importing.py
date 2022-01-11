@@ -1,6 +1,8 @@
 import json
 import mimetypes
 import os.path
+import pathlib
+from pathlib import Path
 from pprint import pprint
 import markdownify
 
@@ -13,19 +15,18 @@ def check_valid_file_format(path):
 
 
 class Importing:
-    def __init__(self, path):
+    def __init__(self, file_name):
         self.data = None
         self.file_content = None
-        self.path = self.get_file_path(path)
+        self.file_name = self.get_file_path(file_name)
         self.read_file()
 
-    def get_file_path(self, path):
-        root = os.path.dirname(os.path.abspath(__file__))
-        return os.path.join(root, path)
+    def get_file_path(self, file_name):
+        return Path(file_name).resolve()
 
     def read_file(self):
-        check_valid_file_format(self.path)
-        self.file_content = open(self.path)
+        check_valid_file_format(self.file_name)
+        self.file_content = open(self.file_name, encoding="utf8")
         self.data = json.load(self.file_content)
         if self.data is None:
             raise Exception("Empty JSON File")
