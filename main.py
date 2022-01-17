@@ -2,6 +2,7 @@ import codecs
 import zipfile
 from pprint import pprint
 
+from process import box
 from process.importing import Importing
 from process.transform import Transform
 from pathlib import Path
@@ -23,6 +24,11 @@ def main():
                                                single_post.feature_image,
                                                single_post.html)
     pprint(sample_file.strip())
+
+    # TODO: check if folder
+    folder_name = "posts"
+    box.sync_folder(folder_name)
+
     with open("output.md", "w", encoding="utf-8") as text_file:
         # text_file.write(codecs.BOM_UTF8)
         text_file.write("%s" % sample_file)
