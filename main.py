@@ -1,6 +1,9 @@
 import codecs
 import zipfile
 from pprint import pprint
+from random import randrange
+
+from slugify import slugify
 
 from process import box
 from process.importing import Importing
@@ -23,11 +26,25 @@ def main():
     sample_file = transform_file.generate_file(single_post.title, single_post.published_at, single_post.slug,
                                                single_post.feature_image,
                                                single_post.html)
-    pprint(sample_file.strip())
-
-    # TODO: check if folder
+    # pprint(sample_file.strip())
     folder_name = "posts"
     box.sync_folder(folder_name)
+
+    for post in ghost_posts[:2]:
+        p = transform_file.generate_file(post.title, post.published_at, post.slug,
+                                         post.feature_image,
+                                         post.html)
+        # file_title = post.title.replace(' ', '-')
+        file_title = slugify(post.title + "-" + post.published_at)
+        filepath = Path(f"{folder_name}/{file_title}.md")
+        filepath.parent.mkdir(parents=True, exist_ok=True)
+
+        with filepath.open("w", encoding="utf-8") as f:
+            f.write(p)
+
+    # TODO: zip the files
+
+    exit(0)
 
     with open("output.md", "w", encoding="utf-8") as text_file:
         # text_file.write(codecs.BOM_UTF8)
