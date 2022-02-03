@@ -1,4 +1,6 @@
 import codecs
+import os.path
+import shutil
 import zipfile
 from pprint import pprint
 from random import randrange
@@ -13,7 +15,7 @@ from pathlib import Path
 
 def main():
     # TODO: only take the file name -> let Importing class do the rest
-    file = Importing("abdallah-yashir-blog.ghost.2021-12-24.json")
+    file = Importing("abdallah-yashir-blog.ghost.json")
     transform_file = Transform(file.data)
     transform_file.get_list_of_posts()
     my_posts = transform_file.filter_posts(10, 'published')
@@ -42,7 +44,13 @@ def main():
         with filepath.open("w", encoding="utf-8") as f:
             f.write(p)
 
-    # TODO: zip the files
+    # TODO: zip the posts folder
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+    output_filename = 'posts'
+    shutil.make_archive(output_filename, 'zip', os.path.join(ROOT_DIR, folder_name))
+
+    ''' ENHANCEMENT: check if zip folder is correct '''
+
 
     exit(0)
 
