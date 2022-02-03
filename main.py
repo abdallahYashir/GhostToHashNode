@@ -31,6 +31,7 @@ def main():
     # pprint(sample_file.strip())
     folder_name = "posts"
     box.sync_folder(folder_name)
+    # TODO: also delete zip file if present ?
 
     for post in ghost_posts[:2]:
         p = transform_file.generate_file(post.title, post.published_at, post.slug,
